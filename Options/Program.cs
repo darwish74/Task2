@@ -148,25 +148,34 @@
                         }
                         Console.WriteLine($"Sum of list is {total}");
                         break;
-                    case 'D':  //{2,1,4,3,5}
-                        for (int i=0; i < list.Count; i++)
+                    case 'D':
+                        int t;
+                        for(int k=0; k<list.Count-1; k++)
                         {
-                            for(int  j=0;j<list.Count-1;j++)
+                            for(int i=0; i<list.Count-1; i++)
                             {
-                                if (list[j] < list[j+1])
+                                if (list[i] > list[i+1])
                                 {
-                                    int temp = list[j + 1];
-                                    list[j+1] = list[j];
-                                    list[j+1] = temp;
+                                    t = list[i+1];
+                                    list[i + 1] = list[i];
+                                    list[i] = t;
                                 }
                             }
                         }
-                        for(int i=0;i<list.Count;i++)
+                        break;
+                    case 'G':
+                        for (int k = 0; k < list.Count - 1; k++)
                         {
-                            Console.WriteLine(list[i]);
+                            for (int i = 0; i < list.Count - 1; i++)
+                            {
+                                if (list[i] < list[i + 1])
+                                {
+                                    t = list[i + 1];
+                                    list[i + 1] = list[i];
+                                    list[i] = t;
+                                }
+                            }
                         }
-
-                    
                         break;
                     case 'Q':
                             Console.WriteLine("Goodbye");
